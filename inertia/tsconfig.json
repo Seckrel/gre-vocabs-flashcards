@@ -5,7 +5,11 @@
     "module": "ESNext",
     "jsx": "react-jsx",
     "paths": {
-      "~/*": ["./*"]
+      "~/*": ["./*"],
+      "@/*": ["./*"],
+      // shadcn
+      "@/components/shadcn": ["./components/shadcn/"],
+      "@/libs/cn": ["./libs/libs.ts"]
     }
   },
   "include": ["./**/*.ts", "./**/*.tsx"]
