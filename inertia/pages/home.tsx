@@ -1,18 +1,19 @@
 import { Head } from '@inertiajs/react'
+import FlashCardFront from '@/components/ui/flashCardFront'
+import FlashCardBack from '~/components/ui/flashCardBack'
 
 export default function Home(props: { version: number }) {
   return (
-    <>
-      <Head title="Homepage" />
-
-      <div className="container">
-        <div className="title">AdonisJS {props.version} x Inertia x React</div>
-
-        <span>
-          Learn more about AdonisJS and Inertia.js by visiting the{' '}
-          <a href="https://docs.adonisjs.com/guides/inertia">AdonisJS documentation</a>.
-        </span>
+    <div className="w-full h-screen flex justify-center items-center">
+      <div
+        className="w-[45vw] h-[20vw] shadow-lg group bg-transparent"
+        style={{ perspective: '1000px' }}
+      >
+        <div className="relative text-center w-full h-full transition-transform duration-700 group-hover:[transform:rotateY(180deg)] [transformStyle:preserve-3d]">
+          <FlashCardFront />
+          <FlashCardBack />
+        </div>
       </div>
-    </>
+    </div>
   )
 }

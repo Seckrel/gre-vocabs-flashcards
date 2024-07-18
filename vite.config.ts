@@ -18,6 +18,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '~/': `${getDirname(import.meta.url)}/inertia/`,
+      '@/': `${getDirname(import.meta.url)}/inertia/`,
+      '@/libs/cn': `${getDirname(import.meta.url)}/inertia/libs/libs.ts`,
     },
   },
 })

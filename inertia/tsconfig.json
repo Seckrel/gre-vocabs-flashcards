@@ -9,7 +9,7 @@
       "@/*": ["./*"],
       // shadcn
       "@/components/shadcn": ["./components/shadcn/"],
-      "@/libs/cn": ["./libs/libs.ts"]
+      "@/libs/cn": ["./libs/"]
     }
   },
   "include": ["./**/*.ts", "./**/*.tsx"]

@@ -2,10 +2,10 @@
 export default {
   darkMode: ['class'],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './inertia/pages/**/*.{ts,tsx}',
+    './inertia/components/**/*.{ts,tsx}',
+    './inertia/app/**/*.{ts,tsx}',
+    './inertia/src/**/*.{ts,tsx}',
   ],
   prefix: '',
   theme: {

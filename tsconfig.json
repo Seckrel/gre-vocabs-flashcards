@@ -23,7 +23,7 @@
 
       // shadcn install
       "@/components/shadcn": ["./inertia/components/shadcn"],
-      "@/libs/cn": ["./inertia/libs/libs.ts"]
+      "@/libs/cn": ["./inertia/libs/"]
     }
   },
   "exclude": ["./inertia/**/*", "node_modules", "build"]
