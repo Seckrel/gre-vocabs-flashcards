@@ -23,14 +23,14 @@ export default function Home({ vocab }: { vocab: VocabType }) {
   const flipCardFn = useCallback((flip: boolean) => setSeeAns(flip), [])
 
   return (
-    <div className="w-full h-screen flex justify-center items-center">
+    <div className="flex h-screen w-full items-center justify-center">
       <div
-        className="w-[45vw] h-[20vw] shadow-lg group bg-transparent"
+        className="group h-[60vh] w-full bg-transparent px-4 shadow-lg sm:w-2/3 sm:p-0 lg:h-[20vw] lg:w-[45vw]"
         style={{ perspective: '1000px' }}
       >
         <div
           ref={flipCard}
-          className="relative text-center w-full h-full transition-transform duration-700 [transformStyle:preserve-3d]"
+          className="relative h-full w-full text-center transition-transform duration-700 [transformStyle:preserve-3d]"
         >
           <FlashCardFront flipCard={flipCardFn} word={vocab.word} />
           <FlashCardBack flipCard={flipCardFn} vocab={vocab} />

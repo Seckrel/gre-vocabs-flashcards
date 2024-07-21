@@ -10,7 +10,7 @@
     "dev": "node ace serve --hmr",
     "test": "node ace test",
     "lint": "eslint .",
-    "format": "prettier --write .",
+    "format": "prettier --write . --plugin=prettier-plugin-tailwindcss",
     "typecheck": "tsc --noEmit"
   },
   "imports": {
@@ -53,6 +53,7 @@
     "pino-pretty": "^11.2.1",
     "postcss": "^8.4.39",
     "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",

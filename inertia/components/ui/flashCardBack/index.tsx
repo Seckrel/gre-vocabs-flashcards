@@ -11,19 +11,19 @@ export default function FlashCardBack({ flipCard, vocab }: TProps) {
   return (
     <Card
       id="back"
-      className="bg-emerald-600 flex flex-col text-inherit border-0 absolute w-full h-full [transform:rotateY(180deg)] [backface-visibility:hidden]  [-webkit-backface-visibility:hidden]"
+      className="absolute flex h-full w-full flex-col border-0 bg-emerald-600 text-inherit [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotateY(180deg)]"
     >
       <CardHeader className="border-b">
         <CardTitle>{vocab.word.toLowerCase()}</CardTitle>
       </CardHeader>
       <CardContent className="mt-6">
-        <ul className="text-xl space-y-3">
+        <ul className="space-y-3 text-xl">
           {vocab.meanings.map((meaning: string) => (
             <li key={meaning}>{meaning};</li>
           ))}
         </ul>
       </CardContent>
-      <CardFooter className="justify-center mt-auto space-x-4">
+      <CardFooter className="mt-auto justify-center space-x-4">
         <Button onClick={() => flipCard(false)}>Go Back</Button>
         <Button
           onClick={async (e) => {

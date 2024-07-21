@@ -8,11 +8,11 @@ type TProps = {
 
 export default function FlashCardFront({ flipCard, word }: TProps) {
   return (
-    <Card className="bg-purple-600 flex flex-col justify-center items-center text-inherit border-0 absolute w-full h-full [backface-visibility:hidden] [-webkit-backface-visibility:hidden]">
+    <Card className="absolute flex h-full w-full flex-col items-center justify-center border-0 bg-purple-600 text-inherit [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
       <CardHeader className="mt-auto">
         <CardTitle>{word.toLowerCase()}</CardTitle>
       </CardHeader>
-      <CardFooter className="justify-center mt-auto">
+      <CardFooter className="mt-auto justify-center">
         <Button onClick={() => flipCard(true)}>See Answer</Button>
       </CardFooter>
     </Card>

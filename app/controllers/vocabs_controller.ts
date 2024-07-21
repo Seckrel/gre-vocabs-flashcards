@@ -19,7 +19,7 @@ export default class VocabsController {
     }
 
     return inertia.render('home', {
-      vocab: await Vocabs.query().select('id', 'word', 'meanings').where('id', choosenId).first(),
+      vocab: await Vocabs.query().select('id', 'word', 'meanings').orderByRaw('RANDOM()').first(),
     })
   }
 }
