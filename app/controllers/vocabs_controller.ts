@@ -6,20 +6,19 @@ export default class VocabsController {
     const requestBody = request.body()
     const currentIdx: number | undefined = requestBody?.currentIdx
 
-    let choosenId: number
-
+    let vocab
     if (currentIdx) {
-      const listOfIds = await Vocabs.query().select('id').where('id', '!=', currentIdx)
-      const lenOfIdReturned = listOfIds.length
-      choosenId = Math.floor(Math.random() * (lenOfIdReturned - 0 + 1)) + 0
+      vocab = await Vocabs.query()
+        .select('id', 'word', 'meanings')
+        .where('id', '!=', currentIdx)
+        .orderByRaw('RANDOM()')
+        .first()
     } else {
-      const listOfIds = await Vocabs.query().select('id')
-      const lenOfIdReturned = listOfIds.length
-      choosenId = Math.floor(Math.random() * (lenOfIdReturned - 0 + 1)) + 0
+      vocab = await Vocabs.query().select('id', 'word', 'meanings').orderByRaw('RANDOM()').first()
     }
 
     return inertia.render('home', {
-      vocab: await Vocabs.query().select('id', 'word', 'meanings').orderByRaw('RANDOM()').first(),
+      vocab: vocab,
     })
   }
 }

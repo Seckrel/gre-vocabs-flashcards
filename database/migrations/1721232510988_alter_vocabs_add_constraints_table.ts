@@ -11,6 +11,9 @@ export default class extends BaseSchema {
   }
 
   async down() {
-    this.schema.alterTable(this.tableName, (table) => {})
+    this.schema.alterTable(this.tableName, (table) => {
+      table.string('word').alter() // This will remove unique and notNullable constraints
+      table.specificType('meanings', 'text[]').alter() // Remove notNullable constraint
+    })
   }
 }
