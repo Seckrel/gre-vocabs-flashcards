@@ -1,11 +1,13 @@
-import { Head } from '@inertiajs/react'
+'use client'
+
 import FlashCardFront from '@/components/ui/flashCardFront'
 import FlashCardBack from '~/components/ui/flashCardBack'
 import { useState, useRef, useLayoutEffect, useCallback } from 'react'
 
-export default function Home(props: { version: number }) {
+export default function Home({ vocab }: { vocab: VocabType }) {
   const flipCard = useRef<HTMLDivElement>(null)
   const [seeAns, setSeeAns] = useState(false)
+  // const { data, isLoading, isError } = useVocabs()
 
   useLayoutEffect(() => {
     if (flipCard && flipCard.current) {
@@ -30,8 +32,8 @@ export default function Home(props: { version: number }) {
           ref={flipCard}
           className="relative text-center w-full h-full transition-transform duration-700 [transformStyle:preserve-3d]"
         >
-          <FlashCardFront flipCard={flipCardFn} />
-          <FlashCardBack flipCard={flipCardFn} />
+          <FlashCardFront flipCard={flipCardFn} word={vocab.word} />
+          <FlashCardBack flipCard={flipCardFn} vocab={vocab} />
         </div>
       </div>
     </div>

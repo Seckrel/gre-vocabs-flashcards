@@ -7,5 +7,8 @@
 |
 */
 
+const VocabsController = () => import('#controllers/vocabs_controller')
+
 import router from '@adonisjs/core/services/router'
-router.on('/').renderInertia('home', { version: 6 })
+router.route('/', ['GET', 'POST'], [VocabsController, 'index'])
+router.get('/ping', [VocabsController, 'index'])

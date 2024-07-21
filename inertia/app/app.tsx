@@ -9,7 +9,7 @@ import { resolvePageComponent } from '@adonisjs/inertia/helpers'
 const appName = import.meta.env.VITE_APP_NAME || 'AdonisJS'
 
 createInertiaApp({
-  progress: { color: '#5468FF' },
+  progress: { color: '#ff0000', includeCSS: true, showSpinner: true },
 
   title: (title) => `${title} - ${appName}`,
 

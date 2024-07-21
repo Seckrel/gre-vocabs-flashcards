@@ -20,6 +20,7 @@
       "#tests/*": ["./tests/*.js"],
       "#start/*": ["./start/*.js"],
       "#config/*": ["./config/*.js"],
+      "#ressources/*": ["./app/ressources/*.ts"],
 
       // shadcn install
       "@/components/shadcn": ["./inertia/components/shadcn"],
