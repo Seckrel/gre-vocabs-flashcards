@@ -26,8 +26,6 @@ export default class CreateDictionary extends BaseCommand {
 
   async run() {
     try {
-      console.log(env.get('UPLOADTHING_APP_ID'))
-      console.log(this.csvid)
       const res = await fetch(`https://utfs.io/a/${env.get('UPLOADTHING_APP_ID')}/${this.csvid}`, {
         method: 'get',
         headers: {
@@ -63,13 +61,13 @@ export default class CreateDictionary extends BaseCommand {
           console.log('CSV file successfully processed')
 
           try {
-            const vocabs = await Vocabs.createMany(records)
+            await Vocabs.createMany(records)
             this.logger.success('Done')
-            console.log(vocabs)
           } catch (e) {
             console.log(e)
             this.logger.error(e.message)
           }
+          return
         })
         .on('error', (error) => {
           console.error('Error processing the CSV file:', error)
